@@ -4,4 +4,13 @@
 <h2><%= @task.title %></h2>
 <p><%= @task.details %></p>
 
-<a href="/tasks/">Back</a>
+<br>
+<%= link_to "Update", edit_task_path(@task) %>
+<br>
+<%= link_to "Delete",
+            task_path(@task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+
+<br>
+<%= link_to "Back", tasks_path %>
